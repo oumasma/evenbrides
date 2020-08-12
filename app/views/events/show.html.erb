@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>The Evenbrides App - Événement</title>
+</head>
+
+<body>
+
+    <div class="container" style= "margin-bottom: 45px">
+        <div class="row">
+            <div class="col-sm-12 ">
+                <h2 class="card-title "> Événement <%=@event.title%></h2>
+                
+                <p>Date de début : <%=@event.start_date %></p>
+                <p>Lieu :: <%= @event.location %></p>
+                <p>Durée : <%=@event.duration %> minutes</p>
+                <p>Prix : <%= @event.price %>€</p>
+                <p>Description : <%= @event.description %></p>
+
+                <p><%= @event.attendances.count %> <%= (@event.attendances.count) == 1 ? 'Participant' : 'Participants'%></p>
+
+                <%= button_to 'Participez !', events_path, method: :post %>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
